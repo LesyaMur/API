@@ -56,7 +56,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer ZWY2M2MwMjBkYzViMTMwMGY5Y2I5NWUyMTU1OWI0OWVlOTE4N2Y2ZmMxOTQyODFmODY2MDE1NGYzM2E1NzA4ZQ",
+						"value": ,
 						"type": "text"
 					}
 				],
@@ -93,7 +93,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer ZWY2M2MwMjBkYzViMTMwMGY5Y2I5NWUyMTU1OWI0OWVlOTE4N2Y2ZmMxOTQyODFmODY2MDE1NGYzM2E1NzA4ZQ",
+						"value": ,
 						"type": "text"
 					}
 				],
@@ -174,7 +174,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer NWEzYzNkNGY1OGIyMTgwOTNjNmU5ZDkwY2Q1OWQ0ZjU4ZmRlNTkyYWJjNjkzYWU0YjMyMWRiOGRmMTJhOTNmZA",
+						"value": ,
 						"type": "text"
 					}
 				],
@@ -213,7 +213,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer NWEzYzNkNGY1OGIyMTgwOTNjNmU5ZDkwY2Q1OWQ0ZjU4ZmRlNTkyYWJjNjkzYWU0YjMyMWRiOGRmMTJhOTNmZA",
+						"value": ,
 						"type": "text"
 					}
 				],
@@ -252,7 +252,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer NWEzYzNkNGY1OGIyMTgwOTNjNmU5ZDkwY2Q1OWQ0ZjU4ZmRlNTkyYWJjNjkzYWU0YjMyMWRiOGRmMTJhOTNmZA",
+						"value": ,
 						"type": "text"
 					}
 				],
@@ -334,7 +334,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer N2UyZTI5YjUzMDNiNDg3ZjZjZjlhMDQzZDQxMzUzZDFhODM0ZWFiZTM4ODE0NzkzMWE3MWY2MjQwMmExODhkNg",
+						"value": ,
 						"type": "text"
 					}
 				],
@@ -373,7 +373,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer N2UyZTI5YjUzMDNiNDg3ZjZjZjlhMDQzZDQxMzUzZDFhODM0ZWFiZTM4ODE0NzkzMWE3MWY2MjQwMmExODhkNg",
+						"value": ,
 						"type": "text"
 					}
 				],
