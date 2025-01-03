@@ -79,7 +79,33 @@
 							"let Body = pm.response.json();\r",
 							"pm.collectionVariables.set(\"id_task\",Body.data.id);\r",
 							"\r",
-							"//Tests"
+							"//Tests\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Name task\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Postman Work\");\r",
+							"});\r",
+							"pm.test(\"Responsible for the task\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.responsible.contentType).to.eql(\"Employee\");\r",
+							"});\r",
+							"pm.test(\"Task status\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.status).to.eql(\"assigned\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -134,7 +160,7 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Your test name\", function () {\r",
+							"pm.test(\"Description task\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.statement).to.eql(\"<p>Описание задачи</p>\");\r",
 							"});"
@@ -251,7 +277,7 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Your test name\", function () {\r",
+							"pm.test(\"Task status\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.status).to.eql(\"accepted\");\r",
 							"});"
@@ -311,7 +337,7 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Your test name\", function () {\r",
+							"pm.test(\"Task status\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.status).to.eql(\"done\");\r",
 							"});"
@@ -368,7 +394,7 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Your test name\", function () {\r",
+							"pm.test(\"Comment\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.content).to.eql(\"<p>Добавить комментарий</p>\");\r",
 							"});"
@@ -486,7 +512,7 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Your test name\", function () {\r",
+							"pm.test(\"Task status\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.data.status).to.eql(\"completed\");\r",
 							"});"
@@ -541,8 +567,18 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(404);\r",
-							"});"
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Text in the response body\", function () {\r",
+							"    pm.response.to.have.jsonBody({\r",
+							"        \"meta\": {\r",
+							"            \"status\": 0,\r",
+							"            \"errors\": []\r",
+							"        },\r",
+							"        \"data\": \"\"\r",
+							"    });\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -567,6 +603,50 @@
 						}
 					}
 				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/task/{{id_task}}",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"task",
+						"{{id_task}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "https://radio-shop.megaplan.by/api/v3/task/{{id_task}}",
 					"protocol": "https",
